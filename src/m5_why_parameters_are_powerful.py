@@ -1,8 +1,8 @@
 """
 This module lets you experience the POWER of FUNCTIONS and PARAMETERS.
 Authors: David Mutchler, Vibha Alangar, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Emily Wilcox.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -25,10 +25,11 @@ def main():
     window.update()
     window.close_on_mouse_click()
 
+    better_draw_circles()
 
 ###############################################################################
 #
-# TODO: 2.
+# Done: 2.
 #   First, RUN this program.  You will see that it draws concentric circles
 #   whose radii vary by 15.
 #
@@ -120,7 +121,8 @@ def draw_circles(point):
 # ###############################################################################
 
 
-def better_draw_circles(point):
+def better_draw_circles(point, radii):
+    # added radii
     """
     Starts out the same as the   draw_circles   function defined ABOVE.
     You Will make it an IMPROVED, MORE POWERFUL function per the above _TODO_.
@@ -129,7 +131,10 @@ def better_draw_circles(point):
     turtle.pen_up()
     turtle.go_to(point)
     turtle.set_heading(0)  # Point "east" (towards the right)
-
+    if radii == 15: # added below
+        better_draw_circles(100, 15)
+        better_draw_circles(100, 30)
+        better_draw_circles(100, 45)
     for k in range(1, 11):  # k becomes 1, 2, 3, ... 10
 
         turtle.pen_up()
